@@ -4,6 +4,8 @@ import { DriveModeProvider } from "@/components/phone-home/DriveModeContext";
 import { InvisibleSavingsSection } from "@/components/invisible-savings/InvisibleSavingsSection";
 import { LifeTreeSection } from "@/components/life-tree/LifeTreeSection";
 import { SocialProofSection } from "@/components/social-proof/SocialProofSection";
+import { ClosingSection } from "@/components/closing/ClosingSection";
+import { WelcomeSection } from "@/components/welcome/WelcomeSection";
 import { HeroSection } from "./HeroSection";
 import { PhoneMockup } from "./PhoneMockup";
 
@@ -11,6 +13,8 @@ export function WhatIfLanding() {
   return (
     <DriveModeProvider>
     <div className="min-h-screen bg-white">
+      <WelcomeSection />
+
       <section
         id="simulator"
         className="dot-grid border-b border-border-purple/40"
@@ -26,6 +30,7 @@ export function WhatIfLanding() {
       <LifeTreeSection />
       <InvisibleSavingsSection />
       <SocialProofSection />
+      <ClosingSection />
     </div>
     </DriveModeProvider>
   );
