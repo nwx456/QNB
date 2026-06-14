@@ -2,25 +2,87 @@
 
 :root {
   --background: #ffffff;
-  --foreground: #171717;
+  --foreground: #0f1a45;
+  --surface-alt: #f0f4ff;
+  --surface-purple: #f5f3ff;
+  --app-shell: #0f1a45;
+  --app-card: #1a2560;
+  --app-card-light: #eef2ff;
+  --app-text: #ffffff;
+  --app-muted: #a5b4fc;
+  --border-default: #d6dcfc;
+  --border-purple: #c4b5fd;
+  --shadow-blue: rgba(0, 51, 160, 0.15);
+  --shadow-purple: rgba(91, 33, 182, 0.2);
 }
 
 @theme inline {
   --color-background: var(--background);
   --color-foreground: var(--foreground);
+  --color-qnb-navy: #0033A0;
+  --color-qnb-purple: #5B21B6;
+  --color-heading: #0f1a45;
+  --color-body: #475569;
+  --color-label: #1e3a8a;
+  --color-surface-alt: var(--surface-alt);
+  --color-surface-purple: var(--surface-purple);
+  --color-app-shell: var(--app-shell);
+  --color-app-card: var(--app-card);
+  --color-app-text: var(--app-text);
+  --color-app-muted: var(--app-muted);
+  --color-app-border: #334695;
+  --color-border-default: var(--border-default);
+  --color-border-purple: var(--border-purple);
+  --color-teal: #6366f1;
+  --color-danger: #dc2626;
   --font-sans: var(--font-geist-sans);
   --font-mono: var(--font-geist-mono);
-}
-
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
-  }
 }
 
 body {
   background: var(--background);
   color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+  font-family: var(--font-geist-sans), system-ui, sans-serif;
+  font-feature-settings: "tnum" 1;
+}
+
+.tabular-nums {
+  font-variant-numeric: tabular-nums;
+}
+
+.dot-grid {
+  background-color: #ffffff;
+  background-image: radial-gradient(circle, #c7d2fe 1px, transparent 1px);
+  background-size: 24px 24px;
+}
+
+.brand-gradient {
+  background: linear-gradient(135deg, #0033A0 0%, #5B21B6 100%);
+}
+
+.brand-gradient-text {
+  background: linear-gradient(135deg, #0033A0 0%, #5B21B6 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+.phone-screen {
+  background: linear-gradient(180deg, #ffffff 0%, #eef4ff 55%, #e8f0fe 100%);
+}
+
+.phone-text {
+  text-align: justify;
+  line-height: 1.4;
+  hyphens: auto;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
 }
