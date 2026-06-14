@@ -18,7 +18,7 @@ export type FeatureEntry = {
 export const FEATURE_ENTRIES = {
   whatIf: {
     id: "what-if",
-    title: "Ne Olurdu? Simülatörü",
+    title: "Olurmu",
     subtitle: "Akıllı özellik",
     description: "Finansal kararları risk almadan test edin, profilinize göre anında sonuç alın.",
     icon: MessageCircleQuestion,
@@ -34,7 +34,7 @@ export const FEATURE_ENTRIES = {
   },
   invisibleSavings: {
     id: "invisible-savings",
-    title: "Görünmez Birikim",
+    title: "Hopti",
     subtitle: "Akıllı özellik",
     description: "Tasarruf anlarınız arka planda yakalanır, hedefinize otomatik aktarılır.",
     icon: EyeOff,
@@ -42,7 +42,7 @@ export const FEATURE_ENTRIES = {
   },
   socialProof: {
     id: "social-proof",
-    title: "Senin Gibiler Ne Yapıyor?",
+    title: "SGNY",
     subtitle: "Akıllı özellik",
     description: "Benzer profildeki kullanıcıların ne yaptığını görün, küçük adımla başlayın.",
     icon: Users,

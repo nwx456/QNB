@@ -13,7 +13,7 @@ const geistMono = Geist_Mono({
 });
 
 export const metadata: Metadata = {
-  title: "Ne Olurdu? Simülatörü | QNB",
+  title: "Olurmu | QNB",
   description:
     "Büyük kararlar almadan önce bütçenizi bir kum havuzunda test edin. Yapay zeka sizin için hesaplasın.",
 };

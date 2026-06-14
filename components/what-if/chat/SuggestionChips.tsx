@@ -4,12 +4,14 @@ type SuggestionChipsProps = {
   chips: string[];
   onSelect: (chip: string) => void;
   disabled?: boolean;
+  chipClass?: string;
 };
 
 export function SuggestionChips({
   chips,
   onSelect,
   disabled = false,
+  chipClass = "px-3.5 py-2 text-[12px]",
 }: SuggestionChipsProps) {
   if (chips.length === 0) return null;
 
@@ -25,7 +27,7 @@ export function SuggestionChips({
           type="button"
           disabled={disabled}
           onClick={() => onSelect(chip)}
-          className="shrink-0 rounded-full border border-qnb-navy/20 bg-qnb-navy/5 px-3.5 py-2 text-[12px] text-qnb-navy transition hover:border-qnb-navy/40 hover:bg-qnb-navy/10 disabled:opacity-50 focus:outline-none focus-visible:ring-2 focus-visible:ring-qnb-navy"
+          className={`shrink-0 rounded-full border border-qnb-navy/20 bg-qnb-navy/5 text-qnb-navy transition hover:border-qnb-navy/40 hover:bg-qnb-navy/10 disabled:opacity-50 focus:outline-none focus-visible:ring-2 focus-visible:ring-qnb-navy ${chipClass}`}
         >
           {chip}
         </button>

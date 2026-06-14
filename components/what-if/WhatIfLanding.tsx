@@ -1,13 +1,15 @@
 "use client";
 
-import { HeroSection } from "./HeroSection";
-import { PhoneMockup } from "./PhoneMockup";
+import { DriveModeProvider } from "@/components/phone-home/DriveModeContext";
 import { InvisibleSavingsSection } from "@/components/invisible-savings/InvisibleSavingsSection";
 import { LifeTreeSection } from "@/components/life-tree/LifeTreeSection";
 import { SocialProofSection } from "@/components/social-proof/SocialProofSection";
+import { HeroSection } from "./HeroSection";
+import { PhoneMockup } from "./PhoneMockup";
 
 export function WhatIfLanding() {
   return (
+    <DriveModeProvider>
     <div className="min-h-screen bg-white">
       <section
         id="simulator"
@@ -25,5 +27,6 @@ export function WhatIfLanding() {
       <InvisibleSavingsSection />
       <SocialProofSection />
     </div>
+    </DriveModeProvider>
   );
 }

@@ -16,7 +16,7 @@ export function InvisibleSavingsHeader() {
           <p className="text-sm font-medium text-heading">
             Merhaba, {MOCK_PROFILE.name}
           </p>
-          <p className="text-[11px] text-body">Görünmez Birikim</p>
+          <p className="text-[11px] text-body">Hopti</p>
         </div>
       </div>
       <span className="shrink-0 rounded-full border border-qnb-purple/20 bg-qnb-purple/5 px-2.5 py-1 text-[10px] font-medium text-qnb-purple">

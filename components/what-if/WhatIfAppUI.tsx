@@ -1,5 +1,7 @@
 "use client";
 
+import { useDriveMode } from "@/components/phone-home/DriveModeContext";
+import { VoiceCommandFooter } from "@/components/phone-home/VoiceCommandFooter";
 import { useCallback, useId, useState } from "react";
 import { ANIMATION, INITIAL_CHIPS, MOCK_PROFILE } from "@/lib/constants/brand";
 import { getWelcomeMessage, matchIntent } from "@/lib/simulator/scenarios";
@@ -13,6 +15,7 @@ function createId(): string {
 }
 
 export function WhatIfAppUI() {
+  const { isSilent, chipClass, inputClass } = useDriveMode();
   const baseId = useId();
   const [messages, setMessages] = useState<ChatMessage[]>([
     {
@@ -78,7 +81,7 @@ export function WhatIfAppUI() {
             <p className="text-sm font-medium text-heading">
               Merhaba, {MOCK_PROFILE.name}
             </p>
-            <p className="text-[11px] text-body">Ne Olurdu? Asistan</p>
+            <p className="text-[11px] text-body">Olurmu Asistan</p>
           </div>
         </div>
         <span className="tabular-nums shrink-0 rounded-full border border-qnb-navy/20 bg-qnb-navy/5 px-2.5 py-1 text-[11px] font-medium text-qnb-navy">
@@ -90,14 +93,23 @@ export function WhatIfAppUI() {
         <ChatThread messages={messages} isTyping={isTyping} />
       </div>
 
-      <footer className="space-y-3 border-t border-border-default bg-white/90 px-4 pb-5 pt-3.5 backdrop-blur-sm">
-        <SuggestionChips
-          chips={chips}
-          onSelect={processMessage}
-          disabled={isTyping}
-        />
-        <ChatInput onSend={processMessage} disabled={isTyping} />
-      </footer>
+      <VoiceCommandFooter hint="Olurmu diye sorun">
+        {!isSilent && (
+          <div className="space-y-3">
+            <SuggestionChips
+              chips={chips}
+              onSelect={processMessage}
+              disabled={isTyping}
+              chipClass={chipClass}
+            />
+            <ChatInput
+              onSend={processMessage}
+              disabled={isTyping}
+              inputClass={inputClass}
+            />
+          </div>
+        )}
+      </VoiceCommandFooter>
     </div>
   );
 }

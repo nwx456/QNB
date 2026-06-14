@@ -42,7 +42,7 @@ export function InvisibleSavingsSection() {
           >
             <div className="max-w-2xl lg:max-w-3xl">
               <p className="font-mono text-xs font-medium uppercase tracking-[0.2em] text-qnb-navy lg:text-sm">
-                QNB · Görünmez Birikim
+                QNB · Hopti
               </p>
               <h2 className="mt-3 text-3xl font-medium tracking-tight lg:text-5xl">
                 <span className="brand-gradient-text">

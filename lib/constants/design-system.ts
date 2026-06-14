@@ -51,5 +51,5 @@ export const PHONE_CLASSES = {
   mockupWidth:
     "relative w-full max-w-[405px] sm:max-w-[425px] lg:max-w-[450px]",
   shellHeight:
-    "flex h-[830px] flex-col overflow-hidden sm:h-[850px] lg:h-[875px]",
+    "flex h-[830px] flex-col overflow-hidden pt-24 sm:h-[850px] lg:h-[875px]",
 } as const;

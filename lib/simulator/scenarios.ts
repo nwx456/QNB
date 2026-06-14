@@ -99,5 +99,5 @@ export function matchIntent(input: string): MatchResult {
 }
 
 export function getWelcomeMessage(): string {
-  return `Merhaba ${MOCK_PROFILE.name}, ben Ne Olurdu? asistanınız. Finansal kararlarınızı risk almadan test edebilirsiniz. Bir senaryo sorun, profilinize göre hesaplayayım.`;
+  return `Merhaba ${MOCK_PROFILE.name}, ben Olurmu asistanınız. Finansal kararlarınızı risk almadan test edebilirsiniz. Bir senaryo sorun, profilinize göre hesaplayayım.`;
 }

@@ -9,7 +9,7 @@ type FeatureBackBarProps = {
 
 export function FeatureBackBar({ title, onBack }: FeatureBackBarProps) {
   return (
-    <div className="flex shrink-0 items-center gap-2 border-b border-border-default bg-white/90 px-3 pb-2 pt-11 backdrop-blur-sm">
+    <div className="flex shrink-0 items-center gap-2 border-b border-border-default bg-white/90 px-3 pb-2 pt-2 backdrop-blur-sm">
       <button
         type="button"
         onClick={onBack}

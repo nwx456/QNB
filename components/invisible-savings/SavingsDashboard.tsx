@@ -34,7 +34,7 @@ export function SavingsDashboard({
           <Sparkles className="h-4 w-4 shrink-0 text-qnb-purple" />
           <div className="min-w-0 flex-1">
             <p className="text-[10px] font-medium text-qnb-purple">
-              Toplam görünmez birikim katkısı
+              Toplam Hopti katkısı
             </p>
             <p className="text-sm font-semibold tabular-nums text-heading">
               +{totalContributed.toLocaleString("tr-TR")} TL

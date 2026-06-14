@@ -2,6 +2,8 @@
 
 import { AnimatePresence } from "framer-motion";
 import { useCallback, useMemo, useState } from "react";
+import { useDriveMode } from "@/components/phone-home/DriveModeContext";
+import { VoiceCommandFooter } from "@/components/phone-home/VoiceCommandFooter";
 import {
   GOAL_CONFIG,
   pickRandomScenario,
@@ -13,6 +15,7 @@ import { ProactiveAlertCard } from "./ProactiveAlertCard";
 import { SavingsDashboard } from "./SavingsDashboard";
 
 export function InvisibleSavingsApp() {
+  const { isSilent, primaryButtonClass } = useDriveMode();
   const [activeScenario, setActiveScenario] = useState<SavingsScenario | null>(
     null,
   );
@@ -40,7 +43,7 @@ export function InvisibleSavingsApp() {
     setTransfers((prev) => [
       {
         id: `transfer-${scenario.id}-${Date.now()}`,
-        label: `Görünmez birikim · ${scenario.behaviorShort}`,
+        label: `Hopti · ${scenario.behaviorShort}`,
         amount: scenario.transferAmount,
         type: "transfer",
         scenarioId: scenario.id,
@@ -61,19 +64,23 @@ export function InvisibleSavingsApp() {
         totalContributed={totalContributed}
       />
 
-      <footer className="shrink-0 border-t border-border-default bg-white/90 px-4 pb-5 pt-3 backdrop-blur-sm">
-        <button
-          type="button"
-          onClick={handleSimulate}
-          disabled={activeScenario !== null}
-          className="w-full rounded-full bg-qnb-navy py-3 text-sm font-medium text-white transition hover:bg-qnb-navy/90 disabled:cursor-not-allowed disabled:opacity-50 focus:outline-none focus-visible:ring-2 focus-visible:ring-qnb-navy focus-visible:ring-offset-2"
-        >
-          Senaryoyu simüle et
-        </button>
-        <p className="mt-2 text-center text-[10px] text-body">
-          Rastgele senaryo · kahve, yemek, ulaşım ve daha fazlası
-        </p>
-      </footer>
+      <VoiceCommandFooter hint="Senaryoyu sesli başlat">
+        {!isSilent && (
+          <div>
+            <button
+              type="button"
+              onClick={handleSimulate}
+              disabled={activeScenario !== null}
+              className={`w-full rounded-full bg-qnb-navy font-medium text-white transition hover:bg-qnb-navy/90 disabled:cursor-not-allowed disabled:opacity-50 focus:outline-none focus-visible:ring-2 focus-visible:ring-qnb-navy focus-visible:ring-offset-2 ${primaryButtonClass}`}
+            >
+              Senaryoyu simüle et
+            </button>
+            <p className="mt-2 text-center text-[10px] text-body">
+              Rastgele senaryo · kahve, yemek, ulaşım ve daha fazlası
+            </p>
+          </div>
+        )}
+      </VoiceCommandFooter>
 
       <AnimatePresence>
         {activeScenario && (

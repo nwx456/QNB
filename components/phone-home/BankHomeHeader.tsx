@@ -5,7 +5,7 @@ import { MOCK_PROFILE } from "@/lib/constants/brand";
 
 export function BankHomeHeader() {
   return (
-    <header className="shrink-0 bg-gradient-to-br from-qnb-navy via-qnb-navy to-qnb-purple px-4 pb-4 pt-11 text-white">
+    <header className="shrink-0 bg-gradient-to-br from-qnb-navy via-qnb-navy to-qnb-purple px-4 pb-4 pt-2 text-white">
       <div className="flex items-center justify-between">
         <div className="flex items-center gap-3">
           <div

@@ -20,7 +20,7 @@ export function SocialProofHeader({ segmentLabel }: SocialProofHeaderProps) {
           <p className="text-sm font-medium text-heading">
             Merhaba, {MOCK_PROFILE.name}
           </p>
-          <p className="text-[11px] text-body">Senin Gibiler Ne Yapıyor?</p>
+          <p className="text-[11px] text-body">SGNY</p>
         </div>
       </div>
       <span

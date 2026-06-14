@@ -1,6 +1,8 @@
 "use client";
 
+import { Mic } from "lucide-react";
 import type { FeatureEntry } from "@/lib/constants/feature-entries";
+import { useDriveMode } from "./DriveModeContext";
 import { BankAccountCard } from "./BankAccountCard";
 import { BankBottomNav } from "./BankBottomNav";
 import { BankHomeHeader } from "./BankHomeHeader";
@@ -15,9 +17,17 @@ type BankHomeScreenProps = {
 };
 
 export function BankHomeScreen({ entry, onOpenFeature }: BankHomeScreenProps) {
+  const { isSilent } = useDriveMode();
+
   return (
     <div className="flex h-full min-h-0 flex-col">
       <BankHomeHeader />
+      {isSilent && (
+        <div className="flex shrink-0 items-center justify-center gap-1.5 border-b border-qnb-purple/20 bg-qnb-purple/10 px-3 py-2 text-[10px] font-medium text-qnb-purple">
+          <Mic className="h-3.5 w-3.5" aria-hidden="true" />
+          Sessiz araç modu · sesli komutla devam edin
+        </div>
+      )}
       <BankHomeTabs />
 
       <div className="flex min-h-0 flex-1 flex-col gap-3 overflow-y-auto bg-gradient-to-b from-qnb-navy/5 via-transparent to-transparent px-4 py-3">

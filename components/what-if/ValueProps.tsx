@@ -34,7 +34,7 @@ export function ValueProps() {
       <div className="mx-auto max-w-7xl px-6">
         <div className="mb-14 max-w-2xl">
           <p className="font-mono text-xs font-medium uppercase tracking-[0.2em] text-qnb-navy">
-            Neden Ne Olurdu?
+            Neden Olurmu?
           </p>
           <h2 className="mt-3 text-3xl font-medium tracking-tight text-heading lg:text-4xl">
             Bankacılık kararları için güvenilir rehber

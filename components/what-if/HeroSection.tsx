@@ -111,7 +111,7 @@ export function HeroSection() {
 
       >
 
-        QNB · Ne Olurdu? Simülatörü
+        QNB · Olurmu
 
       </motion.p>
 

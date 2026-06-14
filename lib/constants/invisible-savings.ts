@@ -72,7 +72,7 @@ export const SAVINGS_SCENARIOS: SavingsScenario[] = [
   {
     id: "subscription",
     icon: Sparkles,
-    alertTitle: "Görünmez tasarruf devrede",
+    alertTitle: "Hopti devrede",
     alertMessage:
       "Kullanmadığın abonelik otomatik tespit edildi ve iptal edildi. Aylık 199 TL artık Yaz Tatili hedefine akıyor.",
     explainLine:

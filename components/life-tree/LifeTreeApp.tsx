@@ -2,6 +2,8 @@
 
 import { AnimatePresence, motion, useReducedMotion } from "framer-motion";
 import { useCallback, useState } from "react";
+import { useDriveMode } from "@/components/phone-home/DriveModeContext";
+import { VoiceMicButton } from "@/components/phone-home/VoiceMicButton";
 import { LifeTreeAppHeader } from "./LifeTreeAppHeader";
 import { LifeTreeStepTabs } from "./LifeTreeStepTabs";
 import { GoalSelectionStep } from "./steps/GoalSelectionStep";
@@ -11,6 +13,7 @@ type Step = "goals" | "tree";
 
 export function LifeTreeApp() {
   const prefersReducedMotion = useReducedMotion();
+  const { isSilent } = useDriveMode();
   const [step, setStep] = useState<Step>("goals");
   const [selectedIds, setSelectedIds] = useState<string[]>([]);
 
@@ -33,6 +36,12 @@ export function LifeTreeApp() {
         showEditLink={step === "tree"}
         onEditGoals={() => setStep("goals")}
       />
+
+      {isSilent && step === "tree" && (
+        <div className="flex shrink-0 justify-center border-b border-border-default/60 bg-qnb-purple/5 py-2">
+          <VoiceMicButton size="compact" label="Ağacını sesli keşfet" />
+        </div>
+      )}
 
       <LifeTreeStepTabs step={step} />
 
